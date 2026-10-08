@@ -7,8 +7,9 @@
 
 </head>
 <body>
-    <h1>Are you ready to learn jQuery?</h1>
-    <h3>prepare for yourself</h3>
+    <h1>Are you ready to learn to Money?</h1>
+    <h1>This is awesome financial Library</h1>
+    <h3></h3>
     <div>
         <p>entend and expand your network and abality
             never be alone because you want to earn much money and make money so 
@@ -21,10 +22,18 @@
     <script type="text/javascript">
         $(document).ready(function(){
             console.log('money');
-            console.log($('h1').html());
-            console.log($('h3').html());
+
+            console.log($('h1:first').html());
+            console.log($('h1:last').html());
+            
+            console.log($('h3').html('<u>prepare for yourself</u>'));
             console.log($('p').html());
+            
             console.log($('button').html());
+            console.log($('h3').text());;
+            $('button').click(function(){
+                window.alert("study investment,crypto");
+            })
         })
     </script>
 </body>
