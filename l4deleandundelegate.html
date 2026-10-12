@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delegate & Undelegate</title>
+</head>
+<body>
+    <h4 class="ano">Anonymous</h4>
+    <h4 class="lap">LAPSUS$</h4>
+    <button class="del">Delegate</button>
+    <button class="undel">Undelegate</button>
+    <button class="zoom">Zoom</button>
+
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('body').delegate('.del','click',function(){
+                console.log("Delegate");
+            })
+            $('.undel').click(function(){
+                $('body').undelegate();
+            })
+
+            // let x = parseInt($('.lap').css('fontSize'));
+            let y = 0;
+            $('.zoom').click(function(e){
+                console.log('zoom');
+                // console.log(x);
+                // x+=10;
+                // $('.lap').css('font-size', x + 'px');
+                $('.lap').css('font-size','+=10px');
+                y++;
+                $(this).text('Zoom ' + y);
+                if(y>=5){
+                    $('body').undelegate(e);
+                }
+            })
+        })
+    </script>
+</body>
+</html>
