@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChildParentSiblings</title>
+    <style>
+        .container{
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: space-evenly;
+            padding: 20px 10px;
+        }
+        .box{
+            min-width: 100px;
+            min-height: 300px;
+            margin: 0 10px;
+        }
+        .box:hover{
+            cursor: pointer;
+        }
+        .box:nth-of-type(1){
+            background-color: red;
+        }
+        .box:nth-of-type(2){
+            background-color: blue;
+        }
+        .box:nth-of-type(3){
+            background-color: green;
+        }
+        .box:nth-of-type(4){
+            background-color: yellow;
+        }
+        .box:nth-of-type(5){
+            background-color: pink;
+        }
+        .box:nth-of-type(6){
+            background-color: orchid;
+        }
+        .box:nth-of-type(7){
+            background-color: purple;
+        }
+        .box:nth-of-type(8){
+            background-color: skyblue;
+        }
+        .box:nth-of-type(9){
+            background-color: teal;
+        }
+        button{
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" id="box1"></div>
+        <div class="box" id="box2"></div>
+        <div class="box" id="box3"></div>
+        <div class="box" id="box4"></div>
+        <div class="box" id="box5"></div>
+        <div class="box" id="box6"></div>
+        <div class="box" id="box7"></div>
+        <div class="box" id="box8"></div>
+        <div class="box" id="box9"></div>
+    </div>
+     <div class="btn-group">
+        <button type="button" id="hide">hide</button>
+        <button type="button" id="show">show</button>
+        <button type="button" id="toggle">toggle</button>
+        <button type="button" id="fadeout">fade out</button>
+        <button type="button" id="fadein">fade in</button>
+        <button type="button" id="fadetog">fade toggle</button>
+        <button type="button" id="fadeto">fade to</button>
+        <button type="button" id="slideup">slide up</button>
+        <button type="button" id="slidedown">slide down</button>
+        <button type="button" id="slidetog">slide toggle</button>
+        <button type="button" id="ani">animate</button>
+        <button type="button" id="delay">delay</button>
+        <button type="button" id="queue">queue</button>
+        <button type="button" id="dequeue">dequeue</button>
+    </div>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+    <script>
+         $(document).ready(function(){
+            $('#hide').click(function(){
+                $('#box1').hide();
+            });
+            $('#show').click(function(){
+                $('#box1').show();
+            });
+            $('#toggle').click(function(){
+                $('#box2').toggle();
+            });
+            $('#fadeout').click(function(){
+                $('#box3').fadeOut();
+            });
+            $('#fadein').click(function(){
+                $('#box3').fadeIn();
+            });
+            $('#fadetog').click(function(){
+                $('#box4').fadeToggle();
+            });
+            $('#fadeto').click(function(){
+                $('#box3').fadeTo();
+            });
+            $('#slideup').click(function(){
+                $('#box5').slideUp(1000);
+            });
+            $('#slidedown').click(function(){
+                $('#box5').slideDown('slow');
+            });$('#slidetog').click(function(){
+                $('#box6').slideToggle(1000);
+            });$('#ani').click(function(){
+                $('#box7').animate();
+            });$('#delay').click(function(){
+                $('#box8').delay().animate();
+            });
+         })
+    </script>
+</body>
+</html>
