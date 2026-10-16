@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery UI</title>
+    <style>
+        .container{
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 10px 0;
+        }
+        .box{
+            width: 100px;
+            height: 300px;
+        }
+        .box:hover{
+            cursor: pointer;
+        }
+        .box:nth-of-type(1){
+            background-color: red;
+        }
+        .box:nth-of-type(2){
+            background-color: blue;
+        }
+        .box:nth-of-type(3){
+            background-color: green;
+        }
+        .box:nth-of-type(4){
+            background-color: yellow;
+        }
+        .box:nth-of-type(5){
+            background-color: pink;
+        }
+        .box:nth-of-type(6){
+            background-color: orchid;
+        }
+        .box:nth-of-type(7){
+            background-color: purple;
+        }
+        .box:nth-of-type(8){
+            background-color: skyblue;
+        }
+        .box:nth-of-type(9){
+            background-color: teal;
+        }
+        button{
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" id="one"></div>
+        <div class="box" id="two"></div>
+        <div class="box" id="three"></div>
+        <div class="box" id="four"></div>
+        <div class="box" id="five"></div>
+        <div class="box" id="six"></div>
+        <div class="box" id="seven"></div>
+        <div class="box" id="eight"></div>
+        <div class="box" id="nine"></div>
+    </div>
+    <button type="button" id="shake">shake</button>
+    <button type="button" id="bounce">bounce</button>
+    <button type="button" id="blind">blind</button>
+    <button type="button" id="clip">clip</button>
+    <button type="button" id="explode">explode</button>
+    <button type="button" id="drop">drop</button>
+    <button type="button" id="fade">fade</button>
+    <button type="button" id="fold">fold</button>
+    <button type="button" id="highlight">highlight</button>
+    <button type="button" id="puff">puff</button>
+    <button type="button" id="pulsate">pulsate</button>
+    <button type="button" id="size">size</button>
+    <button type="button" id="slide">slide</button>
+    <button type="button" id=""></button>
+
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+    <script src="./lib/jquery-ui-1.14.2.custom/jquery-ui.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#shake').click(function(){
+                $("#one").effect('shake');
+            });
+            $('#bounce').click(function(){
+                $("#two").effect('bounce');
+            });
+            $('#blind').click(function(){
+                $("#three").effect('blind');
+            });
+            $('#clip').click(function(){
+                $("#four").effect('clip');
+            });
+            $('#explode').click(function(){
+                $("#five").effect('explode');
+            });
+            $('#fade').click(function(){
+                $("#six").effect('fade');
+            });
+            $('#drop').click(function(){
+                $("#seven").effect('drop');
+            });
+            $('#fold').click(function(){
+                $("#eight").effect('fold');
+            });
+            $('#highlight').click(function(){
+                $("#nine").effect('highlight');
+            });
+            $('#puff').click(function(){
+                $("#one").effect('puff');
+            });
+            $('#size').click(function(){
+                $("#two").effect('size');
+            });
+            $('#slide').click(function(){
+                $("#three").effect('slide');
+            });
+            $('#pulsate').click(function(){
+                $("#four").effect('pulsate');
+            });
+        })
+    </script>
+</body>
+</html>
