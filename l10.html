@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dialogbox</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="dbox" title="How to use jQuery Dialogbox?">
+        <p>We don't need to talk about it anymore shame my ..........anymore,fire in my heart bounding in my brain,driving me crazy</p>
+    </div>
+    <button class="btn">click me</button>
+    <button class="tog-btn">toggle</button>
+
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+    <script src="./lib/jquery-ui-1.14.2.custom/jquery-ui.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.dbox').dialog({
+                autoOpen:false,
+            }).css({
+                background:"Gray",
+                color:'#fff',
+                padding:'10px'
+            })
+            $('.btn').click(function(){
+                $('.dbox').dialog('open');
+            })
+            $('.tog-btn').click(function(){
+                $('.dbox').dialog('isOpen') === true ? $('.dbox').dialog('close') : $('.dbox').dialog('open');
+            })
+        })
+    </script>
+</body>
+</html>
