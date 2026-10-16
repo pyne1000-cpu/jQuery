@@ -4,20 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>autocomplete</title>
+    <link rel="stylesheet" href="./lib/jquery-ui-1.14.2.custom/jquery-ui.min.css" type="text/css">
     <style>
+        *{
+            box-sizing: border-box;
+        }
         body{
             height: 100vh;
             display: grid;
             place-items: center;
         }
+        .container{
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .form-control{
+            display: block;
+            min-width: 250px;
+            padding: 5px;
+            margin-bottom: 10px ;
+        }
+        .justify-content-end{
+            display: flex;
+            justify-content: end;
+        }
     </style>
 </head>
 <body>
-    <div class="container" title="Enter your Credentials">
+    <div class="container">
         <form action="" method="">
-            <input type="text">
-            <button type="submit">submit</button>
+            <div class="form-group">
+                <label for="job" class="form-label">Job Title</label>
+                <input type="text" name="job" id="job" class="form-control">
+            </div>
+            <div class="justify-content-end">
+                <button type="submit" id="btn">submit</button>
+            </div>
         </form>
     </div>
+
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+    <script src="./lib/jquery-ui-1.14.2.custom/jquery-ui.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            const positions = [
+                "CEO",
+                "General Manager",
+                "Manager",
+                "Supervisor",
+                "Technician",
+                "Assistant Supervisor",
+                "Retail Sale",
+                "Cahier",
+                "Promoter",
+                "Security"
+            ]
+
+            $('#job').autocomplete({
+                source:positions
+            })
+            $('form').submit(function(e){
+                e.preventDefault();
+                const getval = $('#job').val();
+                window.alert(`Your Position is :${getval}`)
+            })
+        })
+    </script>
 </body>
 </html>
