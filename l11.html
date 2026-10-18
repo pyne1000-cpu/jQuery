@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./lib/jquery-ui-1.14.2.custom/jquery-ui.min.css" type="text/css">
+    <title>Tool Tip</title>
+</head>
+<body>
+    <div class="container">
+        <h3>How to use jQuery Tooltip?</h3>
+        <p><a href="" id="ttone" title="This's tool tip of jQuery UI">It's used for</a>dfljdfjdkdfdkjfkdjfkjdlkfjladj;fkajd ;fja;dsjf;laj l ffjaljflkkjaldfjal</p>
+
+        <form action="" method="">
+            <div class="form-group">
+                <label for="age" class="form-label">Your Age</label>
+                <input type="text" name="age" id="age" title="Your age must older than 18">
+            </div>
+        </form>
+        <button type="submit">Submit</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+    <script src="./lib/jquery-ui-1.14.2.custom/jquery-ui.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // $(document).tooltip();
+            $('#ttone').tooltip({
+                show:{
+                    effect:"shake",
+                    duration:'1000'
+                },
+                hide:{
+                    effect:"explode",
+                    duration:'1000'
+                },
+                content:"<img src='./icon/JDIT-logo.png' style='width:50px'/> <h5>This is our company logo</h5> <small>Our company will help your business more comfortable</small>"
+                
+            })
+            $('#age').tooltip();
+        })
+    </script>
+</body>
+</html>
