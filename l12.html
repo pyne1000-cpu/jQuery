@@ -6,6 +6,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="./lib/jquery-ui-1.14.2.custom/jquery-ui.min.css" type="text/css">
     <title>Show Password</title>
+    <style>
+        #eye{
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -17,7 +22,7 @@
             <div class="form-group">
                 <label for="psw" class="form-label">Password</label>
                 <input type="password" name="psw" id="psw" class="form-control">
-                <span id="eyetext"><i id="eye" class="fa-solid fa-eye"></i>Show Password</span>
+                <span id="eye"><i id="eye" class="fa-solid fa-eye"></i>Show Password</span>
             </div>
         </form>
     </div>
@@ -26,21 +31,22 @@
     <script src="./lib/jquery-ui-1.14.2.custom/jquery-ui.min.js"></script>
     <script>
         $(document).ready(function(){
-            $('#eye').click(function(){
+
                 let gettype = $('#psw').attr('type');
-                console.log(gettype);
+
+            $('#eye').click(function(){
 
                 if(gettype === 'password'){
                     gettype = 'text';
-                    $('#eye').html('<i class="fa-solid fa-eye-slash"></i>');
-                    $('eyetext').text('Hide Password');
+                    $('#eye').html('<i class="fa-solid fa-eye-slash"></i> Hide Password');
                 }else{
                     gettype = 'password';
-                    $('#eye').html('<i class="fa-solid fa-eye"></i>');
-                    $('eyetext').text('Show Password');
+                    $('#eye').html('<i class="fa-solid fa-eye"></i> Show Password');
                 }
-                $('psw').attr('type',gettype);
+                $('#psw').attr('type',gettype);
             })
+
+
         })
     </script>
 </body>
