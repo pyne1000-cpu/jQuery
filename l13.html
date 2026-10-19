@@ -7,16 +7,71 @@
     <link rel="stylesheet" href="./lib/jquery-ui-1.14.2.custom/jquery-ui.min.css" type="text/css">
     <title></title>
     <style>
-        
+        body{
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+        .container{
+            min-height: 20px;
+            background-color: #f4f4f4;
+            padding: 10px;
+        }
+        .progress-bar{
+            height: 15px;
+            width: 200px;
+            background-color: black;
+            margin-top: 10px;
+        }
+        .progress-percent{
+            width: 0;
+            height: 100%;
+            background-color: yellow;
+        }
+        .percent{
+            display: block;
+            text-align: end;
+            line-height: 15px;
+        }
+        button{
+            margin-top: 10px;
+            margin-left: 65%;
+        }
     </style>
 </head>
 <body>
-    
+    <div class="container">
+        <span></span>
+        <div class="progress-bar">
+            <div class="progress-percent">
+                <span class="percent">00%</span>
+            </div>
+        </div>
+        <button>Download</button>
+    </div>
 
     <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
     <script src="./lib/jquery-ui-1.14.2.custom/jquery-ui.min.js"></script>
     <script>
-       
+        $(document).ready(function(){
+            $('button').click(function(){
+                let idx = 0;
+                function increasing(){
+                    if(idx<=100){
+                        console.log(idx);
+                        $('.container > span').text('Downloading');
+                        $('.progress-percent').css('width',`${idx}%`);
+                        $('.progress-percent span').text(`${idx}%`)
+                        $('button').attr("disabled",true);
+                        idx++;
+                    }else{
+                        clearInterval(calling);
+                        $('button').attr("disabled",false);
+                    }
+                }
+                let calling = setInterval(increasing,100);
+            })
+        })
     </script>
 </body>
 </html>
