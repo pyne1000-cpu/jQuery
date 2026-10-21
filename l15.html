@@ -42,7 +42,7 @@
 
 <body>
     <div class="container">
-        <input type="text" id="search">
+        <input type="text" id="search" class="form-control">
         <table id="datatable">
             <thead>
                 <th>Name</th>
@@ -57,7 +57,7 @@
             <tr>
                 <td>Mr Htun</td>
                 <td>22</td>
-                <td></td>
+                <td>Aspiring Migrant</td>
             </tr>
             <tr>
                 <td>Mr Yan</td>
@@ -89,13 +89,28 @@
                 <td>22</td>
                 <td>Gamer</td>
             </tr>
+            <tr>
+                <td>Mr Ye</td>
+                <td>22</td>
+                <td>Expatriate</td>
+            </tr>
         </table>
     </div>
 
     <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
     <script src="./lib/jquery-ui-1.14.2.custom/jquery-ui.min.js"></script>
     <script>
-
+        $(document).ready(function(){
+            $('#search').keyup(function(){
+                const search = $(this).val().toLocaleLowerCase();
+                console.log(search);
+                $('#datatable tr').filter(function(){
+                    const data = $(this).text().toLocaleLowerCase();
+                    console.log(data);
+                    $(this).toggle(data.indexOf(search) > -1);
+                })
+            })
+        })
     </script>
 </body>
 
