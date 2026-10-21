@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer"> -->
+    <link rel="stylesheet" href="./lib/jquery-ui-1.14.2.custom/jquery-ui.min.css" type="text/css">
+    <title></title>
+    <style>
+        body {
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+
+        .container {}
+        #search {
+            width: 95%;
+            padding: 5px;
+            font-size: large;
+        }
+        #search:focus{
+            outline: none;
+        }
+        #datatable {
+            width: 700px;
+            border-collapse: collapse;
+        }
+        #datatable tr {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+        }
+        #datatable tr:hover{
+            background-color: #f4f4f4;
+        }
+        #datatable th,#datatable td{
+            text-align: left;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <input type="text" id="search">
+        <table id="datatable">
+            <thead>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Job</th>
+            </thead>
+            <tr>
+                <td>Mr Pyne</td>
+                <td>22</td>
+                <td>Entrepreneur</td>
+            </tr>
+            <tr>
+                <td>Mr Htun</td>
+                <td>22</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Mr Yan</td>
+                <td>19</td>
+                <td>Student</td>
+            </tr>
+            <tr>
+                <td>Mr Kyo</td>
+                <td>22</td>
+                <td>Farmer</td>
+            </tr>
+            <tr>
+                <td>Mr Khant</td>
+                <td>23</td>
+                <td>Scammer</td>
+            </tr>
+            <tr>
+                <td>Mr Wai</td>
+                <td>24</td>
+                <td>Photographer</td>
+            </tr>
+            <tr>
+                <td>Mr Pyue</td>
+                <td>24</td>
+                <td>Parent</td>
+            </tr>
+            <tr>
+                <td>Mr Maw</td>
+                <td>22</td>
+                <td>Gamer</td>
+            </tr>
+        </table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+    <script src="./lib/jquery-ui-1.14.2.custom/jquery-ui.min.js"></script>
+    <script>
+
+    </script>
+</body>
+
+</html>
