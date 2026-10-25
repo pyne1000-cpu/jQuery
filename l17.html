@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer"> -->
+    <title></title>
+    <style>
+        body{
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+        .container{
+            box-sizing: border-box;
+        }
+        .form-control{
+            padding: 5px;
+            margin-bottom: 5px;
+        }
+        .addbtn,.rmbtn{
+            background-color: green;
+            text-decoration: none;
+            color: #fff;
+            padding: 5px 15px;
+            margin: 0 3px;
+        }
+        .rmbtn{
+            background-color: red;
+            padding: 5px 5px;
+        }
+        .disabled{
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+       <h3>Multiple Phone Numbers</h3>
+       <div class="phonebox">
+            <label for="phno" style="display: block;">Phone Number</label>
+            <input type="text" name="phone[]" id="phno" class="form-control"><a href="javascript:void(0)" class="addbtn">Add</a>
+       </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+    <script>
+       $(document).ready(function(){
+            const maxlength = 5;
+            let idx = 1,
+                newinputele;
+            $('.addbtn').click(function(){
+                if(idx < maxlength){
+                    idx++;
+                    console.log(idx);
+                    newinputele = `<div>
+                                        <input type="text" name="phone[]" id="phno${idx}" class="form-control"><a href="javascript:void(0)" class="rmbtn">Remove</a>
+                                   </div>`;
+                    $('.phonebox').append(newinputele);               
+                }else{
+                    $(this).addClass('disabled')
+                }
+            })
+            $('.phonebox').on('click','.rmbtn',function(){
+                // console.log('remove');
+                $(this).parent().remove();
+                idx--;
+                console.log(idx);
+                if(idx < maxlength){
+                    $('.addbtn').removeClass('disabled');
+                }
+            })
+       })
+    </script>
+</body>
+</html>
