@@ -12,20 +12,74 @@
             display: grid;
             place-items: center;
         }
+        .container{
+            background: #f4f4f4;
+            padding: 10px;
+        }
+        .form-control{
+            display: block;
+            margin: 10px 0;
+        }
+        .gallery{
+            border: 1px solid black;
+            min-height: 100px;
+            /* width: 100%; */
+            padding: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: flex-start;
+        }
+        .gallery span{
+            text-align: center;
+        }
+        .gallery .removetext{
+            display: none;
+        }
+        .gallery img{
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+        }
     </style>
 </head>
 <body>
     <div class="container">
        <form action="" method="" enctype="multipart/form-data">
             <label for="coverphotos">Cover Photo</label>
-            <input type="file" name="coverphotos[]" id="coverphotos" >
+            <input type="file" name="coverphotos[]" id="coverphotos" class="form-control" accept="image/*" multiple>
        </form>
+       <div class="gallery">
+            <span>Choose Images</span> 
+       </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
     <script src="./lib/jquery-ui-1.14.2.custom/jquery-ui.min.js"></script>
     <script>
-       
+       $(document).ready(function(){
+            $('#coverphotos').on('change',function(){
+                const files = this.files;
+                // $('.gallery').empty();
+                if(files.length>0){
+                    $('.gallery span').addClass('removetext');
+                }else{
+                    $('.gallery span').removeClass('removetext');
+                }
+                $.each(files,function(index,file){
+                    if(!file.type.startsWith('image/')){
+                        return;
+                    }
+                    const reader = new FileReader;
+                    reader.onload = function(e){
+                        const img = $('<img>');
+                        img.attr('src',e.target.result);
+                        $('.gallery').append(img);
+                    }
+                    reader.readAsDataURL(file);
+                })
+            })
+       })
     </script>
 </body>
 </html>
